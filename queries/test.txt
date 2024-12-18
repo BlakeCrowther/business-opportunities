@@ -1,0 +1,20 @@
+What block groups are in zip code 92107?
+PASS
+
+Are there any notable crime statistics or education levels associated with the block groups in zip code 92107 that could impact local business performance?
+PASS
+
+What block groups might be best for opening a fast food restaurant?
+Additional context: "Try to return the blockgroup nodes in the result.
+PASS
+
+What block groups have the highest income?
+PASS
+
+Where are the best places to open a new business?
+PASS
+
+What are the best places to open a new business?
+Additional context: "Try to return the blockgroup nodes in the result.
+PASS
+

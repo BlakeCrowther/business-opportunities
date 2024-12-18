@@ -1,0 +1,378 @@
+{
+  "nodes": {
+    "Business": {
+      "properties": {
+        "business_id": {
+          "unique": {
+            "constraint_name": "Business_business_id_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "business_name": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "business_type": {
+          "type": "STRING",
+          "enum": [
+            "farmers_market",
+            "grocery_store",
+            "fast_food_restaurant",
+            "bakery"
+          ]
+        },
+        "latitude": {
+          "exists": true,
+          "type": "FLOAT"
+        },
+        "longitude": {
+          "exists": true,
+          "type": "FLOAT"
+        },
+        "address": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "rating": {
+          "type": "FLOAT",
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        "price_level": {
+          "type": "STRING",
+          "enum": [
+            "PRICE_LEVEL_UNSPECIFIED",
+            "PRICE_LEVEL_FREE",
+            "PRICE_LEVEL_INEXPENSIVE",
+            "PRICE_LEVEL_MODERATE",
+            "PRICE_LEVEL_EXPENSIVE",
+            "PRICE_LEVEL_VERY_EXPENSIVE"
+          ]
+        }
+      }
+    },
+    "BlockGroup": {
+      "properties": {
+        "ct_block_group": {
+          "unique": {
+            "constraint_name": "BlockGroup_ct_block_group_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "census_tract": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "block_group": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "object_id": {
+          "unique": {
+            "constraint_name": "BlockGroup_object_id_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "wkt": {
+          "exists": true,
+          "type": "STRING"
+        }
+      }
+    },
+    "Zipcode": {
+      "properties": {
+        "zipcode_number": {
+          "unique": {
+            "constraint_name": "Zipcode_zipcode_number_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "wkt": {
+          "type": "STRING"
+        }
+      }
+    },
+    "City": {
+      "properties": {
+        "city_id": {
+          "unique": {
+            "constraint_name": "City_city_id_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "city_name": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "state_name": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "county": {
+          "exists": true,
+          "type": "STRING"
+        },
+        "is_unincorporated": {
+          "type": "BOOLEAN"
+        }
+      }
+    },
+    "Neighborhood": {
+      "properties": {
+        "neighborhood_id": {
+          "unique": {
+            "constraint_name": "Neighborhood_neighborhood_id_unique"
+          },
+          "exists": true,
+          "type": "STRING"
+        },
+        "neighborhood_name": {
+          "exists": true,
+          "type": "STRING"
+        }
+      }
+    },
+    "TotalPopulation": {
+      "properties": {
+        "level": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ]
+        }
+      }
+    },
+    "PopulationGrowth": {
+      "properties": {
+        "growth_rate": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "NEGATIVE",
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "VERY_HIGH"
+          ]
+        }
+      }
+    },
+    "AgeAverage": {
+      "properties": {
+        "group": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "0-4",
+            "5-14",
+            "15-24",
+            "25-44",
+            "45-64",
+            "65+"
+          ]
+        }
+      }
+    },
+    "AgeGroup": {
+      "properties": {
+        "group": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "0-4",
+            "5-14",
+            "15-24",
+            "25-44",
+            "45-64",
+            "65+"
+          ]
+        },
+        "representation": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "VERY_LOW",
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "DOMINANT"
+          ]
+        }
+      }
+    },
+    "WealthIndex": {
+      "properties": {
+        "category": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "LOW",
+            "LOWER_MIDDLE",
+            "MIDDLE",
+            "UPPER_MIDDLE",
+            "HIGH"
+          ]
+        }
+      }
+    },
+    "EducationLevel": {
+      "properties": {
+        "level": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "BASIC",
+            "SECONDARY",
+            "HIGHER"
+          ]
+        },
+        "representation": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "VERY_LOW",
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "VERY_HIGH"
+          ]
+        }
+      }
+    },
+    "CrimeIndex": {
+      "properties": {
+        "category": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "SAFEST",
+            "SAFE",
+            "MODERATE",
+            "UNSAFE",
+            "MOST_UNSAFE"
+          ]
+        }
+      }
+    },
+    "FastFoodSpendingIndex": {
+      "properties": {
+        "category": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "OCCASIONAL",
+            "LIGHT_SPENDER",
+            "REGULAR",
+            "ENTHUSIAST",
+            "SUPER_FAN"
+          ]
+        }
+      }
+    }
+  },
+  "relationships": {
+    "HAS_NEIGHBOR": {
+      "properties": {
+        "neighbor_type": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "City",
+            "Neighborhood"
+          ]
+        }
+      },
+      "mappings": {
+        "City": ["City"],
+        "Neighborhood": ["Neighborhood"]
+      }
+    },
+    "HAS_NEARBY": {
+      "properties": {
+        "nearby_type": {
+          "exists": true,
+          "type": "STRING",
+          "enum": [
+            "City",
+            "Neighborhood"
+          ]
+        }
+      },
+      "mappings": {
+        "City": ["City"],
+        "Neighborhood": ["Neighborhood", "City"]
+      }
+    },
+    "LOCATED_IN": {
+      "properties": {},
+      "mappings": {
+        "Business": ["BlockGroup", "Zipcode"]
+      }
+    },
+    "HAS_NEIGHBORHOOD": {
+      "properties": {},
+      "mappings": {
+        "City": ["Neighborhood"]
+      }
+    },
+    "IS_WITHIN": {
+      "properties": {
+        "containment_type": {
+          "type": "STRING",
+          "enum": [
+            "Full",
+            "Partial"
+          ]
+        },
+        "overlap_ratio": {
+          "type": "FLOAT"
+        }
+      },
+      "mappings": {
+        "City": ["Zipcode"],
+        "Neighborhood": ["Zipcode"],
+        "BlockGroup": ["Zipcode"]
+      } 
+    },
+    "HAS_ENRICHMENT": {
+      "properties": {
+        "source_value": {
+          "exists": true,
+          "type": "STRING"
+        }
+      },
+      "mappings": {
+        "BlockGroup": ["TotalPopulation", "PopulationGrowth", "AgeGroup", "EducationLevel", "WealthIndex", "CrimeIndex", "FastFoodSpendingIndex"]
+      }
+    }
+  },
+  "spatial_layers": {
+    "block_group_layer": {
+      "nodes": ["BlockGroup"],
+      "layer_class": "org.neo4j.gis.spatial.EditableLayerImpl",
+      "geomencoder": "org.neo4j.gis.spatial.WKTGeometryEncoder",
+      "geomencoder_config": "wkt"
+    },
+    "zipcode_layer": {
+      "nodes": ["Zipcode"],
+      "layer_class": "org.neo4j.gis.spatial.EditableLayerImpl",
+      "geomencoder": "org.neo4j.gis.spatial.WKTGeometryEncoder",
+      "geomencoder_config": "wkt"
+    },
+    "business_layer": {
+      "nodes": ["Business"],
+      "layer_class": "org.neo4j.gis.spatial.SimplePointLayer",
+      "geomencoder": "org.neo4j.gis.spatial.encoders.SimplePointEncoder"
+    }
+  }
+}

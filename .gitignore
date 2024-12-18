@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+
+# Presentation
+presentation/

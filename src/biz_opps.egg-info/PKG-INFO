@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: biz_opps
+Version: 0.1.0
+Summary: A knowledge graph to provide insights into business opportunities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: folium
+Requires-Dist: geopandas
+Requires-Dist: google-maps-places
+Requires-Dist: ipykernel
+Requires-Dist: jupyter
+Requires-Dist: matplotlib
+Requires-Dist: neo4j
+Requires-Dist: numpy
+Requires-Dist: openai
+Requires-Dist: pandas
+Requires-Dist: psycopg2-binary
+Requires-Dist: python-dotenv
+Requires-Dist: shapely
+Requires-Dist: SQLAlchemy
+
+# Business Opportunities Knowledge Graph
+
+**Contributers:** Alan Li, Blake Crowther, Wesley Schiller
+
+## Data Sources
+
+- Google Place API
+- GeoEnriched Data at the level of block group
+- Administrative Topology (provided by NDP)
+- [Road Network Data from SANDAG data](https://geo.sandag.org/portal/apps/experiencebuilder/experience/?id=fad9e9c038c84f799b5378e4cc3ed068#data_s=id%3AdataSource_1-0%3A272)
+- LLMs
+- You will also need geoPANDAS for your work.
+
+## Documentation
+- [Neo4j Cypher Manual](https://neo4j.com/docs/cypher-manual/current/)
+- [Neo4j Spatial Procedures](https://neo4j-contrib.github.io/spatial/0.24-neo4j-3.1/index.html#spatial-procedures)
+
+## Knowledge Graph
+
+**Intent:** A graph over businesses, regional characteristics, administrative boundaries and streets.
+
+**Users:** The city of San Diego asks "Where are the food deserts in San Diego, where there is shortage of grocery store but an abundance of fast food and convenience stores"?
+
+## Installation
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -e .
+python -m ipykernel install --user --name=venv --display-name "Biz Opps"
+```
+
+## Knowledge Graph Construction
+**Note**: To populate businesses you must authenticate with Google using the google cloud sdk.
+To do this run the following commands outside of the virtual environment:
+```bash
+brew install --cask google-cloud-sdk
+gcloud init
+gcloud auth application-default login
+```

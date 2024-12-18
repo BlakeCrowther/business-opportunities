@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biz_opps"
+version = "0.1.0"
+description = "A knowledge graph to provide insights into business opportunities"
+readme = "README.md"
+dependencies = [
+    "folium",
+    "geopandas",
+    "google-maps-places",
+    "ipykernel",
+    "jupyter",
+    "matplotlib",
+    "neo4j",
+    "numpy",
+    "openai",
+    "pandas",
+    "psycopg2-binary",
+    "python-dotenv",
+    "shapely",
+    "SQLAlchemy",
+]
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88

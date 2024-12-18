@@ -1,0 +1,14 @@
+folium
+geopandas
+google-maps-places
+ipykernel
+jupyter
+matplotlib
+neo4j
+numpy
+openai
+pandas
+psycopg2-binary
+python-dotenv
+shapely
+SQLAlchemy
